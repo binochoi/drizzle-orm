@@ -38,7 +38,7 @@ export class PgGeometry<T extends ColumnBaseConfig<'array', 'PgGeometry'>> exten
 	static override readonly [entityKind]: string = 'PgGeometry';
 
 	getSQLType(): string {
-		return 'geometry(point)';
+		return 'geometry(Point)';
 	}
 
 	override mapFromDriverValue(value: string): [number, number] {
@@ -83,7 +83,7 @@ export class PgGeometryObject<T extends ColumnBaseConfig<'json', 'PgGeometryObje
 	static override readonly [entityKind]: string = 'PgGeometryObject';
 
 	getSQLType(): string {
-		return 'geometry(point)';
+		return 'geometry(Point)';
 	}
 
 	override mapFromDriverValue(value: string): { x: number; y: number } {
