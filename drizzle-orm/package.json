@@ -1,8 +1,9 @@
 {
-	"name": "drizzle-orm",
+	"name": "@binochoi/drizzle-orm",
 	"version": "0.39.2",
 	"description": "Drizzle ORM package for SQL databases",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"p": "prisma generate --schema src/prisma/schema.prisma",
 		"build": "pnpm p && scripts/build.ts",
@@ -10,15 +11,11 @@
 		"test:types": "cd type-tests && tsc",
 		"test": "vitest run",
 		"pack": "(cd dist && npm pack --pack-destination ..) && rm -f package.tgz && mv *.tgz package.tgz",
-		"publish": "npm publish package.tgz"
+		"publish": "npm publish package.tgz --no-git-checks --provenance=false --access public"
 	},
 	"main": "./index.cjs",
 	"module": "./index.js",
 	"types": "./index.d.ts",
-	"sideEffects": false,
-	"publishConfig": {
-		"provenance": true
-	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/drizzle-team/drizzle-orm.git"
